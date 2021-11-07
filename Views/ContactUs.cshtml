@@ -1,0 +1,25 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+
+     <form>
+                <h4 class="m-3" style="color: 264653;">Contact Us</h4>
+                  <div class="col-md-6 m-2">
+                    <input type="text" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="form-group col-md-6 m-2">
+                  
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                 
+                  <div class="form-group col-md-6 m-2">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="What's up?" rows="3"></textarea>
+                  </div>
+             
+                  <a  class="btn" id="button1"  role="button" href="#">Send</a>
+                </form>

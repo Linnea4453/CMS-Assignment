@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.FoodPosts>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+<div><h3>@Model.Value("foodPostTitle")</h3></div>
+
+<div><img src="@Model.FoodPostImage.Url() "/></div>
+
+
+<div>@Model.Value("FoodPostContent")</div>

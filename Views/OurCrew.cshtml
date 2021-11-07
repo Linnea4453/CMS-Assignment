@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.OurCrew>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+<section class="team-boxed" >
+            <div class="container ">
+                <div class="intro">
+                    <h2>Creaters and amazing Team</h2>
+                    <p>all The People who makes all this happen </p>
+                </div>
+        
+
+<div class="row">
+
+         @{
+	var crewMembers = Umbraco.Content(1097)
+    .ChildrenOfType("crewMember")
+    .Where(x => x.IsVisible())
+    .OrderBy(x => x.Name);
+}
+
+	@foreach (var crewMember in crewMembers)
+	{
+        var image = crewMember.Value<IPublishedContent>("crewMemberImage");
+                        
+
+  <div class="col-md-6 col-lg-4 ">
+    <div class="box">
+        
+            <img src="@image.Url()" style="width:80%">
+            <div class="container">
+              <h4 class="name">@crewMember.Value("crewMemberName")</h4>
+              <p class="title">@crewMember.Value("crewMemberTitle")</p>
+              <p class="description">@crewMember.Value("crewMemberDescriptiom")</p>
+              <div class="social">
+                <a href="#"><i class="fa fa-facebook-official"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            </div>
+        
+   
+</div>
+</div>
+   
+	}
+
+
+ </div>
+
+  </div>
+        </section>

@@ -1,0 +1,13 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.DrinkPosts>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<div><h3>@Model.Value("drinkPostTitle") </h3></div>
+
+<div><img src="@Model.DrinkPostImage.Url() "/></div>
+
+
+<div>@Model.Value("drinkPostContent")</div>

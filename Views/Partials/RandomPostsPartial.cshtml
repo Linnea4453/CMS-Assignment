@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@{
+	var selection = Umbraco.Content(1058)
+    .Descendants()
+    .Where(x => x.IsVisible() && (x.IsDocumentType("drinkPosts") ||
+    x.IsDocumentType("foodPosts") ||
+    x.IsDocumentType("exklusiveFoodPosts")))
+     .OrderBy(t => Guid.NewGuid()).Take(5);
+}
+<ul>
+	@foreach (var item in selection)
+	{
+		<li>
+			<a href="@item.Url()">@item.Name()</a>
+			
+		</li>
+	}
+</ul>
+
+

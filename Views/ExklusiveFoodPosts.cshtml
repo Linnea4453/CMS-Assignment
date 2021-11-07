@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ExklusiveFoodPosts>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<div><h3>@Model.Value("exklusiveFoodTitle")</h3></div>
+
+<div><img src="@Model.ExklusiveFoodPostImage.Url() "/></div>
+
+
+
+<div>@Model.Value("exklusiveFoodPostContent")</div>
